@@ -1,38 +1,640 @@
-.App {
-  text-align: center;
+body
+{
+  background-color: #F4F6F9;
+}
+Link{
+  text-decoration: none;
+}
+ul{
+  position:fixed;
+  left:0px;
+  top:-15px;
+  width: 99%;
+  border:solid 0px black;
+  background-color: #F4F6F9;
+  color: white;
+  padding: 10px;
+  box-shadow:2px 2px 10px #aaa;
+  height: 50px;
+  z-index:999;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+a
+{
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+li{
+    list-style-type: none;
+    position: relative;
+    left: 26%;
+    top:15px;
+    display:inline;
+    margin-right: 2%;
+    border-bottom:none;
+    color: #032D60;
+    border: solid 0px black;
+}
+li:hover
+{
+  border-bottom: solid;
+  border-color:#D94424;
+  color:#D94424;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menulogo
+{
+  position: absolute;
+  left: 20px;
+  top: -7px;
+}
+
+.ninedots
+{
+  position: absolute;
+  left:20px;
+  top: 5px;
+}
+
+.lastitem1
+{
+  position: absolute;
+  right: 130px;
+  top: 8px;
+}
+.lastitem2
+{
+  position: absolute;
+  right:60px;
+  top: 8px;
+}
+
+.itemnsubitemdiv
+{
+  position: relative;
+  top:0px;
+  display: inline;
+  width: 100px;
+  border: solid 0px black;
+  left: 26%;
+  height: 50px;
+}
+
+.itemnsubitemdiv li
+{
+  position: relative;
+  left: 0%;
+}
+
+.itemnsubitemdiv:hover .submenu, .itemnsubitemdivlastitem:hover .submenulast
+{
+  display: block;
+}
+.submenu, .submenulast
+{
+  position: absolute;
+  left:-15px;
+  top:40px;
+  display: block;
+  border: solid 0px red;
+  display: none;
+  height: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  border-bottom: #D94424 solid 3px;
+}
+.submenulast
+{
+  position: absolute;
+  left: 85%;
+  top:55px;
+}
+.sl
+{
+  position: absolute;
+  left: 90%;
+  top:55px;
+}
+.submenu li, .submenulast li
+{
+  display: block;
+  position: relative;
+  top:-10px;
+  left: -5px;
+  padding: 5px;
+  width: 100%;
+  border-bottom:1px dotted black;
+  cursor: pointer;
+  text-align: center;
+}
+
+.submenudownarrow
+{
+  position: relative;
+  top:5px;
+}
+
+.container
+{
+  float:left;
+}
+
+.leftlogin
+{
+  position: relative;
+  left:0px;
+  top:-65px;
+  float:left;
+  border:solid 0px red;
+  width:40%;
+  padding: 5%;
+  height: 500px;
+}
+
+.rightlogin
+{
+  position: relative;
+  left:0px;
+  top:-65px;
+  float:left;
+  border:solid 0px red;
+  width: 39%;
+  padding: 5%;
+  height: 500px;
+}
+
+.loginform
+{
+  position: relative;
+  float:left;
+  top:-40px;
+  left: 10%;
+  border: solid 0px red;
+  box-shadow: 0px 0px 2px #aaa;
+  padding: 50px;
+  width: 70%;
+  height: 330px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.leftimg
+{
+  position: relative;
+  top:-75px;
+  left: 0px;
+  float: left;
+  width: 100%;
+  border: solid 0px red;
+}
+
+.logimg
+{
+  width: 50%;
+  position: relative;
+  float: left;
+  left:30%; 
+  top:-40px;
+}
+
+.inputt
+{
+  width:90%;
+  padding: 15px;
+  font-size:16px;
+  border-radius: 10px;
+  border:solid 2px #ddd;
+  margin-bottom: 15px;
+}
+.inputt:hover
+{
+  border:solid 2px #51A7F2;
+}
+
+.inputb
+{
+  background-color: #0070D2;
+  width: 100%;
+  left:20%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px; 
+  font-size:18px;
+  color: white; 
+}
+
+.rememberme
+{
+  position: relative;
+  top:25px;
+  left: 0px;
+  font-size:18px;
+  border: solid 0px red;
+  color:#aaa;
+}
+
+.remembercheckbox
+{
+  margin-bottom: 15px;
+}
+
+.forgotpwd
+{
+  float:left;
+  position: relative;
+  top:55px;
+  left: 0px;
+  position: relative;
+  font-size: 19px;
+  color:#0070D2;
+}
+
+.donthaveacc
+{
+  float:left;
+  position: absolute;
+  bottom:-145px;
+  left: -30px;
+  position: relative;
+  font-size: 19px;
+  color:#0070D2;
+}
+
+/* Contacts.js styles */
+
+.tablediv
+{
+  position: relative;
+  top: 50px;
+  left: 0px;
+  width: 90%;
+  border: solid 0px red;
+  padding: 5%;
+}
+
+table
+{
+  width: 100%;
+  border-collapse: collapse;
+  border: solid 1px #ddd; 
+}
+
+td,tr,th
+{
+  border: solid 1px #ddd;
+  padding: 5px;
+  text-align: left;
+}
+
+tr>td:first-child, tr>th:first-child
+{
+  text-align: center;
+}
+
+input[type='checkbox']
+{
+  height: 15px;
+  width: 15px;
+}
+
+.tdtxt{
+  display: inline;
+  position: relative;
+  top:-5px;
+}
+.tdimgcontact
+{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top:3px;
+  margin-right: 5px;
+}
+
+.nextimg
+{
+  cursor: pointer;
+}
+
+.heading
+{
+  background-color:#efefef;
+  color: black;
+}
+
+.contactsheading
+{
+  color:#032D60;
+  position: relative;
+  left: 70px;
+}
+
+.contactsheadingimg
+{
+   position: relative;
+   top:7px;
+   margin-right: 10px;
+    
+}
+.searchbar
+{
+  width: 300px;
+  height: 20px;
+  padding: 5px;
+  margin-bottom: 50px;
+  padding-left: 40px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  color: #aaa;
+  font-weight: bold;
+  position: relative;
+  left: 70px;
+  top:10px;
+}
+
+.searchimage
+{
+  position: absolute;
+  left: 80px;
+  top: 103px;
+  width:17px;
+  height: 17px;
+  z-index:1;
+}
+
+.headerabovetable
+{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  border:solid 1px #ddd;
+  background-color: white;
+}
+
+.createcontactbtn
+{
+  width: 150px;
+  height: 35px;
+  padding: 5px;
+  position: absolute;
+  right: 70px;
+  top:40px;
+  background-color: #0070D2;
+  color: white;
+  border:solid 2px #0070D2;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+
+.downloadbtn
+{
+  width: 150px;
+  height: 35px;
+  padding: 5px;
+  position: absolute;
+  right: 70px;
+  top:95px;
+  background-color: white;
+  color: black;
+  border:solid 1px #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+.popupblack
+{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+  display: none;
+}
+
+.popupwhite
+{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 70%;
+  height: 500px;
+  background-color: white;
+  z-index: 1000;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #aaa;
+  display: none;
+}
+
+.popuptextbox
+{
+  width: 35%;
+  height: 35px;
+  padding: 5px;
+  margin-bottom: 30px;
+  padding-left: 40px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  color: #aaa;
+  font-weight: bold;
+  position: relative;
+  left: 1%;
+  top:0px;
+  float:left;
+  margin-right: 1%;
+  margin-left: 6%;
+}
+
+.popupbutton
+{
+  width: 86%;
+  height: 35px;
+  padding: 5px;
+  position: relative;
+  left: 7%;
+  top:0px;
+  background-color: #0070D2;
+  color: white;
+  border:solid 2px #0070D2;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 50px;
+  float:left;
+}
+
+.createconteactpopupheading
+{
+  position: relative;
+  top: 20px;
+  left: 150px;
+  font-size: 20px;
+  color: #032D60;
+  font-family: arial;
+  margin-bottom: 25px;
+}
+
+.createcontactpopupheadimg
+{
+  position: relative;
+  top: 15px;
+  left: -75px;
+  width: 40px;
+  height: 30px;
+  margin-bottom: 25px;
+}
+
+.popupheadlabel
+{
+  position: relative;
+  top: -18px;
+  left: -60px;
+  font-size: 18px;
+  color: #032D60;;
+  font-family: arial;
+  margin-bottom: 50px;
+}
+
+.closepopup
+{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index:9999;
+}
+
+/* Style the tab */
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: white;
+  border-bottom: #0070D2 solid 3px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: white;
+  position: relative;
+  float:left;
+  width: 98.15%;
+  margin-bottom: 100px;
+}
+
+/* Style the close button */
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.topright:hover {color: red;}
+
+/* END OF TABS */
+
+
+/*  Details of contact  start */
+
+.detailscontacttable
+{
+  margin-bottom: 20px;
+}
+
+.detailscontacttable .heading, th, td, tr
+{
+  background-color: white;
+  border:none;
+  text-align: left;
+  padding: 15px;
+}
+
+.detailscontacttable td
+{
+  color:#0070D2;
+  font-size:12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.detailscontacttable th
+{
+  color:black;
+  font-size:12px;
+  text-align: left;
+  font-weight: none;
+}
+
+
+.detailscontacttable tr>td:first-child, tr>th:first-child
+{
+  text-align: left;
+  padding-left: 25px;
+}
+
+
+/*  Details of contact end */
+
+
+.detailstxtdiv
+{
+  position: relative; 
+  float:left;
+  
+}
+
+.ns
+{
+  color:black;
+  border-radius: 0px;
+  border:none;
+  border-bottom: solid 2px;
+  background-image: url('./media/i13.png');
+  background-position: 99% 15px;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  padding-left: 0px;
+}
+.ns:focus
+{
+  border:none;
+}
+
+
+.ns:last-child
+{
+  margin-bottom: 50px;
 }
