@@ -100,7 +100,11 @@ const Contacts = () => {
             <div className='popupblack' style={openpopup}>
                 <div className='popupwhite' style={openpopup}>
                     <img src={require('../media/i8.png')} width="20" height="20"  alt='i8' className='closepopup' onClick={handlepopup}/>
-                    <div className='createconteactpopupheading'><img src={require('../media/i6.png')} width="20" height="20"  alt='i7' className='createcontactpopupheadimg' /><label className='popupheadlabel'>Create Contact</label><br/><br/></div>
+                    <div className='createconteactpopupheading'>
+                        <img src={require('../media/i6.png')} width="20" height="20"  alt='i7' className='createcontactpopupheadimg' />
+                        <label className='popupheadlabel'>Create Contact</label>
+                        <br/><br/>
+                    </div>
                     <div>
                         <input type="text" name='company' placeholder="Company name" className='popuptextbox company' />
                         <input type="text" name='person' placeholder="Person name" className='popuptextbox person' />
@@ -115,11 +119,18 @@ const Contacts = () => {
                 </div>
             </div>
             <div className='headerabovetable'>
-                <h1 className='contactsheading'><img src={contactsimg} className='contactsheadingimg' width="40" height="35" alt='loading problem...'/>Contacts</h1>
-                <img src={require('../media/i7.png')}  alt='i7' className='searchimage' />
-                <input type="text" placeholder="Search..." className='searchbar' value={searchTerm} onChange={handleSearch} />
-                <div><button className='createcontactbtn' onClick={handlepopup}>Create Contact</button></div>
-                <div><button className='downloadbtn'> Download</button></div>
+                <div className='contactsearch'>
+                    <h1 className='contactsheading'><img src={contactsimg} className='contactsheadingimg' width="40" height="35" alt='loading problem...'/>Contacts</h1>
+                    <img src={require('../media/i7.png')}  alt='i7' className='searchimage' />
+                    <input type="text" placeholder="Search..." className='searchbar' value={searchTerm} onChange={handleSearch} />
+                </div>
+                
+                <div className='createcontactdwnload'>
+                    <div>
+                        <button className='createcontactbtn' onClick={handlepopup}>Create Contact</button> <br/>
+                        <button className='downloadbtn'> Download</button>
+                    </div>
+                </div>
             </div>
             <table>
                 <thead>

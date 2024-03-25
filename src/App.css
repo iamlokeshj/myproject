@@ -1,11 +1,22 @@
+@media only screen and (max-width:1550px)
+{
+
+.container
+{
+  position: relative;
+}
+
+
 body
 {
   background-color: #F4F6F9;
 }
-Link{
+Link
+{
   text-decoration: none;
 }
-ul{
+ul
+{
   position:fixed;
   left:0px;
   top:-15px;
@@ -25,7 +36,8 @@ a
   color: white;
 }
 
-li{
+li
+{
     list-style-type: none;
     position: relative;
     left: 26%;
@@ -145,7 +157,6 @@ li:hover
 {
   position: relative;
   left:0px;
-  top:-65px;
   float:left;
   border:solid 0px red;
   width:40%;
@@ -153,13 +164,14 @@ li:hover
   height: 500px;
 }
 
+
 .rightlogin
 {
   position: relative;
   left:0px;
-  top:-65px;
+  top:0px;
   float:left;
-  border:solid 0px red;
+  border:solid 0px blue;
   width: 39%;
   padding: 5%;
   height: 500px;
@@ -169,12 +181,11 @@ li:hover
 {
   position: relative;
   float:left;
-  top:-40px;
   left: 10%;
   border: solid 0px red;
   box-shadow: 0px 0px 2px #aaa;
   padding: 50px;
-  width: 70%;
+  width: 65%;
   height: 330px;
   background-color: white;
   border-radius: 10px;
@@ -183,7 +194,7 @@ li:hover
 .leftimg
 {
   position: relative;
-  top:-75px;
+  top:0px;
   left: 0px;
   float: left;
   width: 100%;
@@ -192,11 +203,10 @@ li:hover
 
 .logimg
 {
-  width: 50%;
+  width: 300px;
   position: relative;
   float: left;
   left:30%; 
-  top:-40px;
 }
 
 .inputt
@@ -284,7 +294,6 @@ table
 td,tr,th
 {
   border: solid 1px #ddd;
-  padding: 5px;
   text-align: left;
 }
 
@@ -324,11 +333,36 @@ input[type='checkbox']
   color: black;
 }
 
+.contactsearch
+{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 49.5%;
+  float:left;
+  border:solid 0px red;
+  background-color: white;
+}
+
+.createcontactdwnload
+{
+  position: relative;
+  top: 0px;
+  left: 0%;
+  width: 50%;
+  height: 167px;
+  float:left;
+  border:solid 0px red;
+  background-color: white;
+}
+
 .contactsheading
 {
   color:#032D60;
   position: relative;
   left: 70px;
+  border: solid 0px red;
+  width: 50%;
 }
 
 .contactsheadingimg
@@ -379,8 +413,9 @@ input[type='checkbox']
   width: 150px;
   height: 35px;
   padding: 5px;
-  position: absolute;
-  right: 70px;
+  position: relative;
+  float:right;
+  right: 59px;
   top:40px;
   background-color: #0070D2;
   color: white;
@@ -396,9 +431,11 @@ input[type='checkbox']
   width: 150px;
   height: 35px;
   padding: 5px;
-  position: absolute;
-  right: 70px;
-  top:95px;
+  position: relative;
+  float: right;
+  right: -90px;
+  top:75px;
+  float: right;
   background-color: white;
   color: black;
   border:solid 1px #ddd;
@@ -542,6 +579,14 @@ input[type='checkbox']
   border-bottom: #0070D2 solid 3px;
 }
 
+.tab button.sactive {
+  background-color: white;
+  border: #0070D2 solid 1px;
+  color: #0070D2;
+  border-radius: 10px;
+}
+
+
 /* Style the tab content */
 .tabcontent {
   display: none;
@@ -574,7 +619,7 @@ input[type='checkbox']
   margin-bottom: 20px;
 }
 
-.detailscontacttable .heading, th, td, tr
+.detailscontacttable th, .detailscontacttable td, .detailscontacttable tr,.detailscontacttable .heading
 {
   background-color: white;
   border:none;
@@ -628,13 +673,113 @@ input[type='checkbox']
   background-repeat: no-repeat;
   padding-left: 0px;
 }
+
 .ns:focus
 {
   border:none;
 }
 
 
-.ns:last-child
+.ns1
 {
-  margin-bottom: 50px;
+  color:black;
+  border-radius: 0px;
+  border:none;
+  border-bottom: solid 2px;
+  background-position: 99% 15px;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  padding-left: 0px;
+}
+
+.nb 
+{
+  border:none;
+}
+
+
+.ns
+{
+  border-bottom: solid 2px;
+  background-position: 0% 10px;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+} /*End of 1440 si/* Path: src/App.css */
+
+
+@media only screen and (max-width:1250px)
+{
+    .leftlogin
+    {
+      width:90%;
+      left:0%;
+    }
+    .rightlogin
+    {
+      width: 90%;
+      top:0px;
+    }
+    .loginform
+    {
+      position: relative;
+      width: 50%;
+      left:-15%;
+      top:50px;
+    }
+    .logimg
+    {
+      top:-45px;
+    }
+    .itemnsubitemdiv
+    {
+      display: none;
+    }
+}
+
+@media only screen and (max-width:900px)
+{
+    
+  .leftlogin
+  {
+    width:90%;
+    left:0%;
+  }
+  .rightlogin
+  {
+    width: 90%;
+    top:0px;
+  }
+  .loginform
+  {
+    position: relative;
+    width: 50%;
+    left:15%;
+    top:-20px;
+  }
+  .logimg
+  {
+    top:-20px;
+    left:30%;
+    width: 200px;
+    height: auto;
+  }
+
+  .contactsearch
+  {
+    width: 100%;
+  }
+  .createcontactdwnload
+  {
+    width: 100%;
+  }
+  .createcontactbtn
+  {
+    width: 70%;    
+  }
+  .downloadbtn
+  {
+    display: block;
+  }
 }

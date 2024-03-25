@@ -38,7 +38,7 @@ const Login = (props) => {
     }
 
     return (
-    <div> <br /><br /><br />
+    <div>
 
        <div className='leftlogin'>
         <img src={logimg1} alt='loading problem..' className='logimg'/>
@@ -56,7 +56,6 @@ const Login = (props) => {
 
             <a href='./forgot' className='forgotpwd'>Forgot password?</a>
 
-            <a href='./register' className='donthaveacc'> Don't have an account?</a>
         </div>
        </div>
 

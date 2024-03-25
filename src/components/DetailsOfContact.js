@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import contactsimg from '../media/i6.png';
+import i1 from '../media/i14.png'
+import i2 from '../media/i15.png'
+import i3 from '../media/i16.png'
 
 const DetailsOfContact = (props) => {
     const [contacts, setContacts] = useState([
@@ -71,12 +74,47 @@ const DetailsOfContact = (props) => {
     var [cls2, setcls2] = useState("tablinks");
     
 
+    var [subvisibleornot1, setSubVisibleornot1] = useState({"display":"block"}); 
+    var [subvisibleornot2, setSubVisibleornot2] = useState({"display":"none"}); 
+    var [subvisibleornot3, setSubVisibleornot3] = useState({"display":"none"}); 
+    var [subcls1, setsubcls1] = useState("bg tablinks sactive");
+    var [subcls2, setsubcls2] = useState("bg tablinks");
+    var [subcls3, setsubcls3] = useState("bg tablinks");
+
+
     var obj1 = {
         "display":"block"
     };
     var obj2 = {
         "display":"none"
     };
+
+    var btn1bg = 
+    {
+        "background-position":"0% 10px",
+        "background-size": "15px 15px",
+        "background-repeat": "no-repeat",
+        "padding-left": "20px",
+        "background-image":`url('../media/${i1}')`
+    }
+
+    var btn2bg = 
+    {
+        "background-position":"10% 10px",
+        "background-size": "15px 15px",
+        "background-repeat": "repeat",
+        "padding-left": "20px",
+        "background-image":`url('../media/${i2}')`
+    }
+
+    var btn3bg = 
+    {
+        "background-position":"0% 10px",
+        "background-size": "15px 15px",
+        "background-repeat": "no-repeat",
+        "padding-left": "20px",
+        "background-image":`url('../media/${i3}')`
+    }
 
     return (
         <div className='tablediv'>
@@ -96,11 +134,11 @@ const DetailsOfContact = (props) => {
                 </thead>
                 <tbody>
                   <tr>
-                  <td>{sortedContacts[props.id]['name']}</td>
-                  <td>{sortedContacts[props.id]['email']}</td>
-                  <td>{sortedContacts[props.id]['phone']}</td>
-                  <td>{sortedContacts[props.id]['salesperson']}</td>
-                  <td style={{color:"green"}}>Active<div style={{}}></div></td>
+                    <td>{sortedContacts[props.id]['name']}</td>
+                    <td>{sortedContacts[props.id]['email']}</td>
+                    <td>{sortedContacts[props.id]['phone']}</td>
+                    <td>{sortedContacts[props.id]['salesperson']}</td>
+                    <td style={{color:"green"}}>Active<div style={{}}></div></td>
                   </tr>  
                 </tbody>
             </table>
@@ -129,10 +167,45 @@ const DetailsOfContact = (props) => {
                         
                     </div>
 
-                    <div id="Activities" style={visibleornot2} className="tabcontent">
+                    <div id="Activities" style={visibleornot2} className="tabcontent nb">
                         <span onClick={()=>this.parentElement.style.display='none'} clasNames="topright"></span>
                         <h3>Activities</h3>
-                        <p>Activities will be displayee here.</p> 
+                            <div className="tab nb" >
+                                <button  className={subcls1} style={btn1bg} onClick={()=>{setSubVisibleornot1(obj1);setSubVisibleornot2(obj2);setSubVisibleornot3(obj2);setsubcls1("tablinks sactive");setsubcls2("tablinks");setsubcls3("tablinks");}} id="defaultOpen">New Taks</button>
+                                <button style={btn2bg} className={subcls2} onClick={()=>{setSubVisibleornot1(obj2);setSubVisibleornot2(obj1);setSubVisibleornot3(obj2);setsubcls1("tablinks");setsubcls2("tablinks sactive");setsubcls3("tablinks");}} id="defaultOpen">New Events</button>
+                                <button style={btn3bg} className={subcls3} onClick={()=>{setSubVisibleornot1(obj2);setSubVisibleornot2(obj2);setSubVisibleornot3(obj1);setsubcls1("tablinks");setsubcls2("tablinks");setsubcls3("tablinks sactive");}} id="defaultOpen">Email</button>
+                            </div>
+
+                            <div id="NewTasks" style={subvisibleornot1} className="tabcontent nb">
+                                <input type="text" name='email' placeholder="Individual" className='popuptextbox email ns' />
+                                <input type="text" name='address' placeholder="Name" className='popuptextbox address ns' />
+                                <input type="text" style={{width:"77.5%"}} name='taxid' placeholder="Assigned to" className='popuptextbox taxid ns' />
+
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black"}} className='popupbutton'>Cancel</button>
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px"}} className='popupbutton'>Save</button>
+                            </div>
+
+                            <div id="NewEvents" style={subvisibleornot2} className="tabcontent nb">
+                                <input type="text" style={{width:"77.5%"}} name='email' placeholder="Subject " className='popuptextbox email ns' />
+                                <input type="date" name='address' placeholder="Start Date" className='popuptextbox address ns1' />
+                                <input type="date" name='taxid' placeholder="End Date" className='popuptextbox taxid ns1' />
+                                <input type="time" name='address' placeholder="Start Time" className='popuptextbox address ns1' />
+                                <input type="time" name='taxid' placeholder="End Time" className='popuptextbox taxid ns1' />
+
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black"}} className='popupbutton'>Cancel</button>
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px"}} className='popupbutton'>Save</button>
+                            </div>
+
+                            <div id="Emails" style={subvisibleornot3} className="tabcontent nb">
+                                <input type="text" name='email' placeholder="From" className='popuptextbox email ns' />
+                                <input type="text" name='address' placeholder="To" className='popuptextbox address ns' />
+                                <input type="text" name='taxid' placeholder="Bcc" className='popuptextbox taxid ns' />
+                                <input type="text" name='taxid' placeholder="Subject" className='popuptextbox taxid ns' />
+                                <textarea style={{width:"77.5%", height:"100px"}} rows="5" name='additionalinfo' placeholder="Mail" className='popuptextbox additionalinfo ns'></textarea>
+
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black"}} className='popupbutton'>Cancel</button>
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px"}} className='popupbutton'>Save</button>
+                          </div> 
                     </div>
 
                 </div>
