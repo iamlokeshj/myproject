@@ -94,7 +94,7 @@ const DetailsOfContact = (props) => {
         "background-position":"0% 10px",
         "background-size": "15px 15px",
         "background-repeat": "no-repeat",
-        "padding-left": "20px",
+        "padding-left": "30px",
         "background-image":`url('../media/${i1}')`
     }
 
@@ -103,7 +103,7 @@ const DetailsOfContact = (props) => {
         "background-position":"10% 10px",
         "background-size": "15px 15px",
         "background-repeat": "repeat",
-        "padding-left": "20px",
+        "padding-left": "30px",
         "background-image":`url('../media/${i2}')`
     }
 
@@ -112,17 +112,29 @@ const DetailsOfContact = (props) => {
         "background-position":"0% 10px",
         "background-size": "15px 15px",
         "background-repeat": "no-repeat",
-        "padding-left": "20px",
+        "padding-left": "30px",
         "background-image":`url('../media/${i3}')`
     }
+
+    var [vs, setVs] = useState({"visibility":"hidden"});
+    const visibleCancelNSave = () => {
+        setVs({"visibility":"visible"});
+    }
+
+    const hideCancelNSave = () => {
+        setVs({"visibility":"hidden"});
+    }
+    
+    
+
 
     return (
         <div className='tablediv'>
             <div className='headerabovetable'>
                 <h1 className='contactsheading'><img src={contactsimg} className='contactsheadingimg' width="40" height="35" alt='loading problem...'/>{sortedContacts[props.id]['name']}</h1>
-
             </div>
-            <table className='detailscontacttable'>
+
+            <table className='detailscontacttable deskvisibiliy'>
                 <thead>
                     <tr className='heading'>
                         <th>Title</th>
@@ -143,6 +155,27 @@ const DetailsOfContact = (props) => {
                 </tbody>
             </table>
 
+            <table className='detailscontacttable mobilevisibility'>
+                <thead>
+                    <tr className='heading'>
+                        <th>Title</th> <td>{sortedContacts[props.id]['name']}</td>
+                    </tr>
+                    <tr className='heading'>
+                        <th>Company</th><td>{sortedContacts[props.id]['email']}</td>
+                    </tr>
+                    <tr className='heading'>
+                        <th>Phone</th> <td>{sortedContacts[props.id]['phone']}</td>
+                    </tr>
+                    <tr className='heading'>
+                        <th>Email</th> <td>{sortedContacts[props.id]['salesperson']}</td>
+                    </tr>
+                    <tr className='heading'>
+                        <th>Status</th><td style={{color:"green"}}> Active<div style={{}}></div></td>
+                    </tr>
+                </thead>
+            </table>
+
+
             <div className='personeditable'>
                     <div className="tab">
                         <button className={cls1} onClick={()=>{setVisibleornot1(obj1);setVisibleornot2(obj2);setcls1("tablinks active");setcls2("tablinks");}} id="defaultOpen">Details</button>
@@ -152,37 +185,39 @@ const DetailsOfContact = (props) => {
                     <div id="Details" style={visibleornot1} className="tabcontent">
                         <br/><br/>
                         <div>
-                            <input type="text" name='company' placeholder="Company name" className='popuptextbox company ns' />
-                            <input type="text" name='person' placeholder="Individual name" className='popuptextbox person ns' />
-                            <input type="text" name='contacttype' placeholder="Individual name" className='popuptextbox contact ns' />
-                            <input type="text" name='phone' placeholder="Title" className='popuptextbox number ns' />
-                            <input type="text" name='email' placeholder="Account number" className='popuptextbox email ns' />
-                            <input type="text" name='address' placeholder="Job position" className='popuptextbox address ns' />
-                            <input type="text" name='taxid' placeholder="Company name" className='popuptextbox taxid ns' />
-                            <input type="text" name='additionalinfo' placeholder="Contact owner" className='popuptextbox additionalinfo ns' />
-
-                            <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black"}} className='popupbutton'>Cancel</button>
-                            <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px"}} className='popupbutton'>Save</button>
-                        </div>
-                        
+                            <input type="text" name='company' placeholder="Company name" className='popuptextbox company ns' onClick={visibleCancelNSave} />
+                            <input type="text" name='person' placeholder="Individual name" className='popuptextbox person ns' onClick={visibleCancelNSave} />
+                            <input type="text" name='contacttype' placeholder="Individual name" className='popuptextbox contact ns' onClick={visibleCancelNSave} />
+                            <input type="text" name='phone' placeholder="Title" className='popuptextbox number ns' onClick={visibleCancelNSave} />
+                            <input type="text" name='email' placeholder="Account number" className='popuptextbox email ns' onClick={visibleCancelNSave} />
+                            <input type="text" name='address' placeholder="Job position" className='popuptextbox address ns' onClick={visibleCancelNSave} />
+                            <input type="text" name='taxid' placeholder="Company name" className='popuptextbox taxid ns' onClick={visibleCancelNSave} />
+                            <input type="text" name='additionalinfo' placeholder="Contact owner" className='popuptextbox additionalinfo ns' onClick={visibleCancelNSave} />
+                            
+                            <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black", ...vs}} className='popupbutton cancel btn' onClick={hideCancelNSave}>Cancel</button>
+                            <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px", ...vs}} className='popupbutton save btn'>Save</button>
+                        </div>                        
                     </div>
 
                     <div id="Activities" style={visibleornot2} className="tabcontent nb">
                         <span onClick={()=>this.parentElement.style.display='none'} clasNames="topright"></span>
                         <h3>Activities</h3>
                             <div className="tab nb" >
-                                <button  className={subcls1} style={btn1bg} onClick={()=>{setSubVisibleornot1(obj1);setSubVisibleornot2(obj2);setSubVisibleornot3(obj2);setsubcls1("tablinks sactive");setsubcls2("tablinks");setsubcls3("tablinks");}} id="defaultOpen">New Taks</button>
-                                <button style={btn2bg} className={subcls2} onClick={()=>{setSubVisibleornot1(obj2);setSubVisibleornot2(obj1);setSubVisibleornot3(obj2);setsubcls1("tablinks");setsubcls2("tablinks sactive");setsubcls3("tablinks");}} id="defaultOpen">New Events</button>
-                                <button style={btn3bg} className={subcls3} onClick={()=>{setSubVisibleornot1(obj2);setSubVisibleornot2(obj2);setSubVisibleornot3(obj1);setsubcls1("tablinks");setsubcls2("tablinks");setsubcls3("tablinks sactive");}} id="defaultOpen">Email</button>
+                                    <button  className={subcls1} style={btn1bg} onClick={()=>{setSubVisibleornot1(obj1);setSubVisibleornot2(obj2);setSubVisibleornot3(obj2);setsubcls1("tablinks sactive");setsubcls2("tablinks");setsubcls3("tablinks");}} id="defaultOpen"><img src={require('../media/i14.png')} className='tabbtnimg' width="20" height="20"  alt='i14'/> <span className='tabbtntxt'>New Tasks</span></button>
+                                    
+                                    <button style={btn2bg} className={subcls2} onClick={()=>{setSubVisibleornot1(obj2);setSubVisibleornot2(obj1);setSubVisibleornot3(obj2);setsubcls1("tablinks");setsubcls2("tablinks sactive");setsubcls3("tablinks");}} id="defaultOpen"><img src={require('../media/i15.png')} className='tabbtnimg' width="20" height="20"  alt='i15'/> <span className='tabbtntxt'>New Event</span> </button>
+                                    
+                                    <button style={btn3bg} className={subcls3} onClick={()=>{setSubVisibleornot1(obj2);setSubVisibleornot2(obj2);setSubVisibleornot3(obj1);setsubcls1("tablinks");setsubcls2("tablinks");setsubcls3("tablinks sactive");}} id="defaultOpen"><img src={require('../media/i16.png')} className='tabbtnimg' width="20" height="20"  alt='i8'/> <span className='tabbtntxt'>Email</span></button>
+                                
                             </div>
 
                             <div id="NewTasks" style={subvisibleornot1} className="tabcontent nb">
-                                <input type="text" name='email' placeholder="Individual" className='popuptextbox email ns' />
-                                <input type="text" name='address' placeholder="Name" className='popuptextbox address ns' />
-                                <input type="text" style={{width:"77.5%"}} name='taxid' placeholder="Assigned to" className='popuptextbox taxid ns' />
+                                <input type="text" name='email' placeholder="Individual" className='popuptextbox email ns' onClick={visibleCancelNSave}/>
+                                <input type="text" name='address' placeholder="Name" className='popuptextbox address ns' onClick={visibleCancelNSave}/>
+                                <input type="text" style={{width:"77.5%"}} name='taxid' placeholder="Assigned to" className='popuptextbox taxid ns' onClick={visibleCancelNSave}/>
 
-                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black"}} className='popupbutton'>Cancel</button>
-                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px"}} className='popupbutton'>Save</button>
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black", ...vs}} className='popupbutton cancelr btn' onClick={hideCancelNSave}>Cancel</button>
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px", ...vs}} className='popupbutton save btn'>Save</button>
                             </div>
 
                             <div id="NewEvents" style={subvisibleornot2} className="tabcontent nb">
@@ -192,19 +227,19 @@ const DetailsOfContact = (props) => {
                                 <input type="time" name='address' placeholder="Start Time" className='popuptextbox address ns1' />
                                 <input type="time" name='taxid' placeholder="End Time" className='popuptextbox taxid ns1' />
 
-                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black"}} className='popupbutton'>Cancel</button>
-                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px"}} className='popupbutton'>Save</button>
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black", ...vs}} className='popupbutton cancel btn' onClick={hideCancelNSave}>Cancel</button>
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px", ...vs}} className='popupbutton save btn'>Save</button>
                             </div>
 
                             <div id="Emails" style={subvisibleornot3} className="tabcontent nb">
-                                <input type="text" name='email' placeholder="From" className='popuptextbox email ns' />
-                                <input type="text" name='address' placeholder="To" className='popuptextbox address ns' />
-                                <input type="text" name='taxid' placeholder="Bcc" className='popuptextbox taxid ns' />
-                                <input type="text" name='taxid' placeholder="Subject" className='popuptextbox taxid ns' />
-                                <textarea style={{width:"77.5%", height:"100px"}} rows="5" name='additionalinfo' placeholder="Mail" className='popuptextbox additionalinfo ns'></textarea>
+                                <input type="text" name='email' placeholder="From" className='popuptextbox email ns' onClick={visibleCancelNSave} />
+                                <input type="text" name='address' placeholder="To" className='popuptextbox address ns' onClick={visibleCancelNSave} />
+                                <input type="text" name='taxid' placeholder="Bcc" className='popuptextbox taxid ns' onClick={visibleCancelNSave} />
+                                <input type="text" name='taxid' placeholder="Subject" className='popuptextbox taxid ns' onClick={visibleCancelNSave} />
+                                <textarea style={{width:"77.5%", height:"100px"}} rows="5" name='additionalinfo' placeholder="Mail" className='popuptextbox additionalinfo ns' onClick={visibleCancelNSave} ></textarea>
 
-                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black"}} className='popupbutton'>Cancel</button>
-                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px"}} className='popupbutton'>Save</button>
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"25%", backgroundColor:"white", color:"black", ...vs}} className='popupbutton cancel btn' onClick={hideCancelNSave}>Cancel</button>
+                                <button style={{width:"15%", position:"relative", top:"20px", marginLeft:"50px", ...vs}} className='popupbutton save btn'>Save</button>
                           </div> 
                     </div>
 

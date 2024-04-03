@@ -1,4 +1,4 @@
-@media only screen and (max-width:1550px)
+@media only screen and (max-width:8450px)
 {
 
 .container
@@ -35,6 +35,10 @@ a
   text-decoration: none;
   color: white;
 }
+
+/*
+    Code for responsive accordiens 
+*/
 
 li
 {
@@ -169,12 +173,10 @@ li:hover
 {
   position: relative;
   left:0px;
-  top:0px;
+  top:30px;
   float:left;
   border:solid 0px blue;
-  width: 39%;
-  padding: 5%;
-  height: 500px;
+  width: 47.5%;
 }
 
 .loginform
@@ -206,7 +208,7 @@ li:hover
   width: 300px;
   position: relative;
   float: left;
-  left:30%; 
+  left:27%; 
 }
 
 .inputt
@@ -295,6 +297,15 @@ td,tr,th
 {
   border: solid 1px #ddd;
   text-align: left;
+  padding:5px;
+  background-color: white;
+}
+
+tr:hover
+{
+  color:#0070D2;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 tr>td:first-child, tr>th:first-child
@@ -357,6 +368,16 @@ input[type='checkbox']
 }
 
 .contactsheading
+{
+  color:#032D60;
+  position: relative;
+  left: 20px;
+  border: solid 0px red;
+  width: 50%;
+}
+
+
+.contactsheading1
 {
   color:#032D60;
   position: relative;
@@ -459,6 +480,7 @@ input[type='checkbox']
 .popupwhite
 {
   position: fixed;
+  float:left;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -469,6 +491,8 @@ input[type='checkbox']
   border-radius: 10px;
   box-shadow: 0px 0px 10px #aaa;
   display: none;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .popuptextbox
@@ -489,6 +513,8 @@ input[type='checkbox']
   margin-right: 1%;
   margin-left: 6%;
 }
+
+
 
 .popupbutton
 {
@@ -577,13 +603,14 @@ input[type='checkbox']
 .tab button.active {
   background-color: white;
   border-bottom: #0070D2 solid 3px;
+  
 }
 
 .tab button.sactive {
   background-color: white;
   border: #0070D2 solid 1px;
   color: #0070D2;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 
@@ -609,7 +636,37 @@ input[type='checkbox']
 
 .topright:hover {color: red;}
 
+
+.tabbtnimgholder
+{
+  position: relative;
+}
+
+
+.tabbtnimg
+{
+  position: relative;
+  top: 0px;
+  left: -15px;  
+}
+
+.tabbtntxt
+{
+  position: relative;
+  top: -4px;
+  left: -10px;
+}
+
+
+
+
+
 /* END OF TABS */
+
+.subcls1
+{
+  background-image: url('./media/i14.png');
+}
 
 
 /*  Details of contact  start */
@@ -617,6 +674,7 @@ input[type='checkbox']
 .detailscontacttable
 {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .detailscontacttable th, .detailscontacttable td, .detailscontacttable tr,.detailscontacttable .heading
@@ -627,10 +685,15 @@ input[type='checkbox']
   padding: 15px;
 }
 
+thead, tbody
+{
+  width: 100%;
+}
+
 .detailscontacttable td
 {
   color:#0070D2;
-  font-size:12px;
+  font-size:16px;
   font-weight: bold;
   text-align: left;
 }
@@ -638,7 +701,7 @@ input[type='checkbox']
 .detailscontacttable th
 {
   color:black;
-  font-size:12px;
+  font-size:14px;
   text-align: left;
   font-weight: none;
 }
@@ -649,6 +712,13 @@ input[type='checkbox']
   text-align: left;
   padding-left: 25px;
 }
+
+
+.mobilevisibility
+{
+  display:none;
+}
+
 
 
 /*  Details of contact end */
@@ -674,11 +744,6 @@ input[type='checkbox']
   padding-left: 0px;
 }
 
-.ns:focus
-{
-  border:none;
-}
-
 
 .ns1
 {
@@ -698,7 +763,7 @@ input[type='checkbox']
 }
 
 
-.ns
+.nsx
 {
   border-bottom: solid 2px;
   background-position: 0% 10px;
@@ -706,6 +771,14 @@ input[type='checkbox']
   background-repeat: no-repeat;
   padding-left: 20px;
 }
+
+.btn
+{
+  visibility: hidden;
+}
+
+
+
 } /*End of 1440 si/* Path: src/App.css */
 
 
@@ -736,6 +809,11 @@ input[type='checkbox']
     {
       display: none;
     }
+
+    .popuptextbox
+    {
+      width: 75%;
+    }
 }
 
 @media only screen and (max-width:900px)
@@ -745,6 +823,7 @@ input[type='checkbox']
   {
     width:90%;
     left:0%;
+    top:20px;
   }
   .rightlogin
   {
@@ -756,23 +835,37 @@ input[type='checkbox']
     position: relative;
     width: 50%;
     left:15%;
-    top:-20px;
+    top:20px;
   }
   .logimg
   {
-    top:-20px;
+    top:20px;
     left:30%;
     width: 200px;
     height: auto;
   }
 
+  .rightlogin
+  {
+    display: none;
+  }
+
   .contactsearch
   {
     width: 100%;
+    top:40px;
+  }
+
+  .searchbar
+  {
+    width: 60%;
+  
   }
   .createcontactdwnload
   {
     width: 100%;
+    padding: 0px;
+    height: 100px;
   }
   .createcontactbtn
   {
@@ -780,6 +873,31 @@ input[type='checkbox']
   }
   .downloadbtn
   {
-    display: block;
+    display: none;
+  }
+  .tableholder
+  {
+    top:50px;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+  .ptextboxes
+{
+  padding-bottom: 700px;
+}
+
+  .mobilevisibility
+  {
+    display:inline-table;
+  }
+  .deskvisibiliy
+  {
+    display: none;
+  }
+  .submenulast
+  {
+    position: relative;
+    left:0px;
   }
 }

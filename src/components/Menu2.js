@@ -15,11 +15,11 @@ const Menu1 = () => {
             <Link to="/" className='menulogo'> <li><img src={mylogo}  alt='problem loading...' width="200px"/></li> </Link>
 
             <div className='itemnsubitemdiv'>
-              <Link to="/dashboard"> <li>Home</li> </Link>
+              <Link to="/Home"> <li>Home</li> </Link>
             </div>
 
             <div className='itemnsubitemdiv'>
-              <Link to="/dashboard"> <li>Contacts <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
+              <Link to="/profile/admin"> <li>Contacts <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
               <ol className='submenu'>
                 <li>subitem2</li>
                 <li>subitem3</li>
@@ -28,7 +28,16 @@ const Menu1 = () => {
             </div>
 
             <div className='itemnsubitemdiv'>
-              <Link to="/dashboard"> <li>Activities <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
+              <Link to="/activities"> <li>Activities <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
+              <ol className='submenu'>
+                <li>Task</li>
+                <li>Email</li>
+                <li>Event</li>
+              </ol>
+            </div>
+
+            <div className='itemnsubitemdiv'>
+              <Link to="/tracking"> <li>Tracking <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
               <ol className='submenu'>
                 <li>subitem2</li>
                 <li>subitem3</li>
@@ -37,33 +46,13 @@ const Menu1 = () => {
             </div>
 
             <div className='itemnsubitemdiv'>
-              <Link to="/dashboard"> <li>Tasks <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
+              <Link to="/Attendance"> <li>Attendance <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
               <ol className='submenu'>
                 <li>subitem2</li>
                 <li>subitem3</li>
                 <li>subitem4</li>
               </ol>
             </div>
-
-            <div className='itemnsubitemdiv'>
-              <Link to="/dashboard"> <li>Tracking <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
-              <ol className='submenu'>
-                <li>subitem2</li>
-                <li>subitem3</li>
-                <li>subitem4</li>
-              </ol>
-            </div>
-
-
-            <div className='itemnsubitemdiv'>
-              <Link to="/dashboard"> <li>Attendance <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
-              <ol className='submenu'>
-                <li>subitem2</li>
-                <li>subitem3</li>
-                <li>subitem4</li>
-              </ol>
-            </div>
-
 
             <div className='itemnsubitemdiv'>
               <Link to="/dashboard"> <li>Dashboard <img src={require('../media/i9.png')} width="20" height="20"  alt='i9' className='submenudownarrow'/> </li> </Link>
@@ -94,6 +83,11 @@ const Menu1 = () => {
             </div>
 
         </ul>
+
+        <div>
+          
+        </div>
+
     </div>
   )
 }
